@@ -23,7 +23,7 @@ def login():
             hash_pass = hashlib.sha256(password.encode('utf-8')).hexdigest()
             conn = mysql.connect()
             cursor = conn.cursor(pymysql.cursors.DictCursor)
-            cursor.execute('SELECT * FROM user WHERE email = %s AND password= %s',(email, hash_pass))
+            cursor.execute('SELECT * FROM user WHERE email = %s AND password= %s AND role=%s',(email, hash_pass, 0))
             # Fetch one record and return result
             user = cursor.fetchone()
             if user:

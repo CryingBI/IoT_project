@@ -5,7 +5,7 @@ from controllers.login import login
 from controllers.user import *
 from controllers.room import *
 from controllers.house import *
-from controllers.control import *
+from controllers.control import controlDevice
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
